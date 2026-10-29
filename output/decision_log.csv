@@ -1,0 +1,10 @@
+table,issue,decision,reason
+patients,exact duplicate rows,I removed duplicate rows and kept the first one.,Duplicate rows repeat the same patient information and alter the data and make it inaccurate.
+patients,gender spellings that are not a code,"I converted gender values to F, M, or X and made the unknown values missing.",having all the same gender codes makes the data easier to analyze.
+patients,site codes needing normalization,I changed site codes to uppercase and removed spaces and hyphens.,having a standardized site codes allow the tables to match properly.
+patients,birth_year sentinel 9999,I replaced 9999 with missing values.,9999 represents is a missing birth year and not a real year.
+visits,weight column named wt_kg in visits_south.csv,I renamed wt_kg to weight_kg.,Both visit files need the same column names before combining.
+visits,sbp sentinel 999 and readings outside 70 through 250,I replaced invalid blood pressure readings with missing values.,Invalid blood pressure values should not be used in the analysis.
+visits,impossible and loosely written visit dates,I converted valid dates and made invalid dates missing.,I did this so everything would be consistent.
+visits,repeated patient_id and visit pairs,I kept the later visit reading for repeated pairs.,The later reading is the recheck for that visit.
+sites,repeated site_code rows,I kept only current records.,This is so there weren't mutiple rows with the same info.
